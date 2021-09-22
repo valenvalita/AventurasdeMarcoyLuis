@@ -2,6 +2,12 @@ package com.example.aventurasdemarcoyluis;
 
 import java.util.Objects;
 
+/**
+ * Class that represent a Enemy in the game
+ *
+ *  @author SB
+ */
+
 public class Enemies {
     private int atk;
     private int def;
@@ -17,7 +23,7 @@ public class Enemies {
      * @param LVL level of the Unit
      *
      */
-    public Enemies(int ATK, int DEF, int HP, int LVL, EnemyType t ){
+    public Enemies(int ATK, int DEF, int HP, int LVL, EnemyType t) {
         atk=ATK;
         def=DEF;
         hp=HP;
@@ -48,8 +54,6 @@ public class Enemies {
     public void setHp(int hp) {
         this.hp = hp;
     }
-
-
 
     public int getLvl() {
         return lvl;
