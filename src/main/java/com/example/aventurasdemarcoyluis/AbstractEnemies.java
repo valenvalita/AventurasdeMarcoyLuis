@@ -8,27 +8,30 @@ import java.util.Objects;
  *  @author SB
  */
 
-public class Enemies {
+public abstract class AbstractEnemies implements IEnemyType {
+    private String name;
     private int atk;
     private int def;
     private int hp;
     private int lvl=1;
-    private EnemyType type;
+    private IEnemyType type;
 
     /**
      * Creates a new Enemy
+     * @param NAME name
      * @param ATK attack points
      * @param DEF defense points
      * @param HP  heal points
      * @param LVL level of the Unit
      *
      */
-    public Enemies(int ATK, int DEF, int HP, int LVL, EnemyType t) {
-        atk=ATK;
-        def=DEF;
-        hp=HP;
-        lvl=LVL;
-        type=t;
+    public AbstractEnemies(String NAME, int ATK, int DEF, int HP, int LVL, IEnemyType t) {
+        name = NAME;
+        atk = ATK;
+        def = DEF;
+        hp = HP;
+        lvl = LVL;
+        type = t;
     }
 
     public int getAtk() {
@@ -63,10 +66,7 @@ public class Enemies {
         this.lvl = lvl;
     }
 
-    public EnemyType getType() {
-        return type;
-    }
-
+    /*
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -74,6 +74,7 @@ public class Enemies {
         Enemies enemies = (Enemies) o;
         return atk == enemies.atk && def == enemies.def && hp == enemies.hp && lvl == enemies.lvl;
     }
+    */
 
 
 }
