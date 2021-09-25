@@ -12,15 +12,13 @@ public class Goomba extends AbstractEnemies {
     /**
      * Creates a new Enemy
      *
-     * @param NAME
      * @param ATK  attack points
      * @param DEF  defense points
      * @param HP   heal points
      * @param LVL  level of the Unit
-     * @param t
      */
-    public Goomba(String NAME, int ATK, int DEF, int HP, int LVL, IEnemyType t) {
-        super(NAME, ATK, DEF, HP, LVL, t);
+    public Goomba(int ATK, int DEF, int HP, int LVL) {
+        super(ATK, DEF, HP, LVL);
     }
 
     // ATTACK METHODS
@@ -48,6 +46,8 @@ public class Goomba extends AbstractEnemies {
         return this.getAtk()== enemy.getAtk() && this.getDef() == enemy.getDef() && this.getHp() == enemy.getHp() && this.getLvl() == enemy.getLvl();
     }
 
+    // @Override
+    //public int hashCode() {return super.hashCode();}
 
 
 }

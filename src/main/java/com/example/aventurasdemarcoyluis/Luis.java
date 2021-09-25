@@ -45,4 +45,19 @@ public class Luis extends AbstractPlayers {
         anEnemy.atacadoPorLuis(this);
     }
 
+    /**
+     * Determine if two objects are equal
+     * @param obj Object to be compared with an object of type Luis
+     * @return true if the objects are the equals (even by the values of their fields)
+     */
+    @Override
+    public boolean equals(Object obj) {
+        if (!(obj instanceof Luis)) return false;
+        Luis player = (Luis) obj;
+        return this.getAtk()== player.getAtk() && this.getDef() == player.getDef() && this.getMaxHp() == player.getMaxHp() && this.getCurrentHp() == player.getCurrentHp() && this.getLvl() == player.getLvl();
+    }
+
+    //@Override
+    //public int hashCode() { return super.hashCode(); }
+
 }

@@ -19,12 +19,11 @@ public abstract class AbstractEnemies implements IEnemyType {
      * @param HP  heal points
      * @param LVL level of the Unit
      */
-    public AbstractEnemies(String NAME, int ATK, int DEF, int HP, int LVL, IEnemyType t) {
+    public AbstractEnemies(int ATK, int DEF, int HP, int LVL) {
         atk = ATK;
         def = DEF;
         hp = HP;
         lvl = LVL;
-        type = t;
     }
 
     // GETTERS AND SETTERS
@@ -74,7 +73,11 @@ public abstract class AbstractEnemies implements IEnemyType {
      * @param hp enemy's health points
      */
     public void setHp(int hp) {
-        this.hp = hp;
+        if (hp < 0) {
+            this.hp = 0;
+        } else {
+            this.hp = hp;
+        }
     }
 
     /**

@@ -5,7 +5,8 @@ package com.example.aventurasdemarcoyluis;
  * player can choose
  *
  */
-public enum AttackType {
+/*public enum AttackType {
     MARTILLO,SALTO
 
 }
+*/

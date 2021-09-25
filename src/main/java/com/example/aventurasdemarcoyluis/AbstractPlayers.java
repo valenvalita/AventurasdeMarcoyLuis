@@ -1,6 +1,6 @@
 package com.example.aventurasdemarcoyluis;
 
-import java.util.List;
+import java.util.ArrayList;
 //import java.util.Objects;
 
 /**
@@ -15,7 +15,8 @@ public abstract class AbstractPlayers implements IPlayers {
     private int currenthp;
     private int fp;
     private int lvl;
-    public List<IItems> armamento;
+    private boolean invencible;
+    private ArrayList<IItems> armamento;
 
     // CONSTRUCTOR
     /**
@@ -35,6 +36,8 @@ public abstract class AbstractPlayers implements IPlayers {
         this.currenthp = CurrentHP;
         this.fp = FP;
         this.lvl = LVL;
+        this.invencible = false;
+        this.armamento = new ArrayList<IItems>(3);
     }
 
     // ADD ITEMS
@@ -47,6 +50,22 @@ public abstract class AbstractPlayers implements IPlayers {
     }
 
     // GETTERS AND SETTERS
+    /**
+     * Allows to obtain the player's items
+     * @return player's items
+     */
+    public ArrayList<IItems> getArmamento() {
+        return armamento;
+    }
+
+    /**
+     * Set up a player's items
+     * @param armamento player's items
+     */
+    public void setArmamento(ArrayList<IItems> armamento) {
+        this.armamento = armamento;
+    }
+
     /**
      * Allows to obtain the player's attack points
      * @return player's attack points
@@ -61,11 +80,7 @@ public abstract class AbstractPlayers implements IPlayers {
      * @param atk  player's attack points
      */
     public void setAtk(int atk) {
-        if (this.isKO()) {
-            this.atk = 0;
-        } else {
-            this.atk = atk;
-        }
+        this.atk = atk;
     }
 
     /**
@@ -155,6 +170,22 @@ public abstract class AbstractPlayers implements IPlayers {
         this.lvl = lvl;
     }
 
+    /**
+     * Allow knowing if player is in invincible state
+     * @return player's invincible state
+     */
+    public boolean getInvencible() {
+        return this.invencible;
+    }
+
+    /**
+     * Set up a player's invincible state
+     * @param invinciblestate player's invicible state
+     */
+    public void setInvencible(boolean invinciblestate) {
+        this.invencible = invinciblestate;
+    }
+
     // ITEMS METHODS
     /**
      * Allow the player to receive the item Honey Syrup
@@ -172,7 +203,7 @@ public abstract class AbstractPlayers implements IPlayers {
      */
     public void receiveRedMushroom() {
         //Cura al personaje una cantidad de 10% del HP MÁXIMO
-        int newHP = (int) (this.getMaxHp() * 1.1);
+        int newHP = this.getCurrentHp() + (int)(this.getMaxHp()* 0.1);
         this.setCurrentHp(newHP);
     }
 
@@ -181,6 +212,7 @@ public abstract class AbstractPlayers implements IPlayers {
      */
     public void receiveStar() {
         //Estado Invencible AKA no puede morir(????
+        this.setInvencible(true);
     }
 
     // K.O. METHOD
@@ -189,7 +221,12 @@ public abstract class AbstractPlayers implements IPlayers {
      * @return if the player is K.O.
      */
     public boolean isKO() {
-        return this.getCurrentHp() == 0;
+        if (this.getCurrentHp() == 0) {
+            this.setAtk(0);
+            return true;
+        } else {
+            return false;
+        }
     }
 
     // RECEIVE ATTACK METHODS
