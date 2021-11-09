@@ -1,4 +1,7 @@
-package com.example.aventurasdemarcoyluis;
+package com.example.aventurasdemarcoyluis.model.characters.enemies;
+
+import com.example.aventurasdemarcoyluis.model.characters.principal_characters.IPlayers;
+import com.example.aventurasdemarcoyluis.model.characters.principal_characters.Luis;
 
 /**
  * Class that represent an Enemy in the game
@@ -22,6 +25,7 @@ public class Boo extends AbstractEnemies {
     }
 
     // ATTACK METHODS
+
     /**
      * Perform an Enemy's attack on a Player
      * Use Double Dispatch technique

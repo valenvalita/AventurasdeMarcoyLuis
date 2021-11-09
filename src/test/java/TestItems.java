@@ -1,4 +1,8 @@
-import com.example.aventurasdemarcoyluis.*;
+import com.example.aventurasdemarcoyluis.model.items.HoneySyrup;
+import com.example.aventurasdemarcoyluis.model.characters.principal_characters.Luis;
+import com.example.aventurasdemarcoyluis.model.characters.principal_characters.Marco;
+import com.example.aventurasdemarcoyluis.model.items.RedMushroom;
+import com.example.aventurasdemarcoyluis.model.items.Star;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

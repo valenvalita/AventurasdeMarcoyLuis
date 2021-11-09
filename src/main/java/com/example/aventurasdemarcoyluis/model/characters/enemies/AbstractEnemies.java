@@ -1,4 +1,7 @@
-package com.example.aventurasdemarcoyluis;
+package com.example.aventurasdemarcoyluis.model.characters.enemies;
+
+import com.example.aventurasdemarcoyluis.model.characters.principal_characters.Luis;
+import com.example.aventurasdemarcoyluis.model.characters.principal_characters.Marco;
 
 /**
  * Class that represent an Enemy in the game
@@ -96,6 +99,14 @@ public abstract class AbstractEnemies implements IEnemyType {
         this.lvl = lvl;
     }
 
+    // K.O. METHOD
+    /**
+     * Allow knowing if the enemy is defeated
+     * @return if the player is K.O.
+     */
+    public final boolean isKO() {
+        return this.getHp() == 0;
+    }
     // RECEIVE ATTACK METHODS
     /**
      * Execute a certain damage attack on an enemy

@@ -1,4 +1,6 @@
-package com.example.aventurasdemarcoyluis;
+package com.example.aventurasdemarcoyluis.model.items;
+
+import com.example.aventurasdemarcoyluis.model.characters.principal_characters.IPlayers;
 
 /**
  * Interface that represent the items in the game

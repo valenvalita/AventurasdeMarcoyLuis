@@ -1,4 +1,8 @@
-import com.example.aventurasdemarcoyluis.*;
+import com.example.aventurasdemarcoyluis.model.characters.enemies.Boo;
+import com.example.aventurasdemarcoyluis.model.characters.enemies.Goomba;
+import com.example.aventurasdemarcoyluis.model.characters.principal_characters.Luis;
+import com.example.aventurasdemarcoyluis.model.characters.principal_characters.Marco;
+import com.example.aventurasdemarcoyluis.model.characters.enemies.Spiny;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

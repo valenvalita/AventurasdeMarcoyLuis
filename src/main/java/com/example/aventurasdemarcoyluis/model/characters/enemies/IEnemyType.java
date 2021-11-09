@@ -1,9 +1,21 @@
-package com.example.aventurasdemarcoyluis;
+package com.example.aventurasdemarcoyluis.model.characters.enemies;
+
+import com.example.aventurasdemarcoyluis.model.characters.ICharacters;
+import com.example.aventurasdemarcoyluis.model.characters.principal_characters.IPlayers;
+import com.example.aventurasdemarcoyluis.model.characters.principal_characters.Luis;
+import com.example.aventurasdemarcoyluis.model.characters.principal_characters.Marco;
 
 /**
  * Interface that represent an Enemy in the game
  */
-public interface IEnemyType {
+public interface IEnemyType extends ICharacters {
+
+    // K.O. METHOD
+    /**
+     * Allow knowing if the player is defeated
+     * @return if the player is K.O.
+     */
+    public boolean isKO();
 
     // ATTACK METHOD
     /**

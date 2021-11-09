@@ -1,10 +1,15 @@
-package com.example.aventurasdemarcoyluis;
+package com.example.aventurasdemarcoyluis.model.characters.principal_characters;
+
+import com.example.aventurasdemarcoyluis.model.characters.enemies.Boo;
+import com.example.aventurasdemarcoyluis.model.characters.enemies.Goomba;
+import com.example.aventurasdemarcoyluis.model.characters.enemies.Spiny;
+import com.example.aventurasdemarcoyluis.model.items.IItems;
 
 import java.util.ArrayList;
 //import java.util.Objects;
 
 /**
- * Class that represent a Player in the game
+ * Abstract Class that represent a Player in the game
  * Implements interface IPlayers
  * Models the player's main characters and methods
  */
@@ -220,13 +225,8 @@ public abstract class AbstractPlayers implements IPlayers {
      * Allow knowing if the player is defeated
      * @return if the player is K.O.
      */
-    public boolean isKO() {
-        if (this.getCurrentHp() == 0) {
-            this.setAtk(0);
-            return true;
-        } else {
-            return false;
-        }
+    public final boolean isKO() {
+        return this.getCurrentHp() == 0;
     }
 
     // RECEIVE ATTACK METHODS
