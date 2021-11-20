@@ -11,26 +11,26 @@ public class Chest {
     public Hashtable <String, Integer> chest;
 
     /**
-     * Create a chest empty
+     * Create a empty chest
      */
-    public void createChest() {
+    public Chest() {
         chest = new Hashtable <String, Integer>();
     }
 
     /**
      * Add items to the chest
      * @param aName Name of the item
-     * @param NumberofItem quantity of the item
+     * @param numberOfItem quantity of the item
      */
-    public void addItemToChest(String aName, int NumberofItem) {
-        chest.put(aName, NumberofItem);
+    public void addItemToChest(String aName, int numberOfItem) {
+        chest.put(aName, numberOfItem);
     }
 
     /**
-     * Get an item from the chest
+     * Get number of item from the chest
      * @param aName name of the item
      */
-    public void getIteminChest(String aName) {
-        chest.get(aName);
+    public int getItemInChest(String aName) {
+        return chest.get(aName);
     }
 }
